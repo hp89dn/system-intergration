@@ -1,1 +1,0 @@
-exports.getIndex = async(req, res, next) => {};

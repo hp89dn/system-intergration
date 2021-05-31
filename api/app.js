@@ -3,7 +3,8 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var hrRouter = require("./routes/hr");
+var hrRouter = require("./routes/hr.route");
+var payrollRouter = require("./routes/payroll.route");
 
 const PORT = process.env.PORT || 4000;
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/", hrRouter);
+app.use("/api/hr", hrRouter);
+app.use("/api/payroll", payrollRouter);
 
 app.listen(PORT);
